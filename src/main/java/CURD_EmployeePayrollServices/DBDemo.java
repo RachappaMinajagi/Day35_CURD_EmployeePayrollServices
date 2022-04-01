@@ -1,6 +1,4 @@
 package CURD_EmployeePayrollServices;
-
-
 /**
  * UC1 :- Ability to create a payroll service database and have java program connect to database.
  *
@@ -30,7 +28,7 @@ public class DBDemo {
 		/**
 		 * password
 		 */
-		String password = "123456"; 
+		String password = "123456";
 		Connection connection;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -47,7 +45,7 @@ public class DBDemo {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * create method listDrivers
 	 */

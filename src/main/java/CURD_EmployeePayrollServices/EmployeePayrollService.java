@@ -35,6 +35,13 @@ public class EmployeePayrollService {
 		return this.employeePayrollList.size();
 	}
 
+	/**
+	 * 
+	 * Create method readEmployeeData and passing parameter
+	 * 
+	 * @param ioType
+	 */
+
 	public void readEmployeeData(IOService ioType) {
 		if (ioType.equals(IOService.CONSOLE_IO)) {
 			System.out.println("Enter employee id:");
@@ -82,5 +89,18 @@ public class EmployeePayrollService {
 
 	public void printData(IOService fileIo) {
 
+	}
+
+	public long countEnteries1(IOService ioType) {
+		if (ioType.equals(IOService.FILE_IO))
+			return new FileIOService().countEntries();
+		return 0;
+	}
+
+	public void printEmployeePayrollData1(IOService ioType) {
+		if (ioType.equals(IOService.FILE_IO))
+			new FileIOService().printEmployeePayrolls();
+		else
+			this.employeePayrollList.stream().forEach(employeeData -> System.out.println(employeeData.toString()));
 	}
 }
